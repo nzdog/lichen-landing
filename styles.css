@@ -483,6 +483,17 @@ input:focus, textarea:focus {
     }
 }
 
+.submitted-notice {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease;
+}
+
 /* ------------------------------
    Site Footer
 ------------------------------ */

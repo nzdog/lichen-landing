@@ -187,6 +187,10 @@
                     <div class="success-message" id="success-message">
                         you're on the list. we'll be in touch soon.
                     </div>
+
+                    <div class="submitted-notice" id="submitted-notice">
+                        you have joined the waitlist
+                    </div>
                 </form>
             </div>
         </section>
@@ -219,6 +223,7 @@
         const nameInput = document.getElementById('waitlist-name');
         const emailError = document.getElementById('email-error');
         const successMessage = document.getElementById('success-message');
+        const submittedNotice = document.getElementById('submitted-notice');
         const submitButton = waitlistForm.querySelector('.waitlist-button');
 
         waitlistForm.addEventListener('submit', function(e) {
@@ -274,14 +279,22 @@
                 emailInput.value = '';
                 nameInput.value = '';
 
-                // Re-enable button
-                submitButton.disabled = false;
-                submitButton.textContent = 'join the waitlist';
+                // Change button to show submitted state
+                submitButton.textContent = 'submitted ✓';
+                submitButton.style.borderColor = '#4caf50';
+                submitButton.style.color = 'rgba(76, 175, 80, 0.8)';
 
-                // Auto-hide success message after 5 seconds
+                // Re-enable button after 3 seconds and reset appearance
                 setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'join the waitlist';
+                    submitButton.style.borderColor = '';
+                    submitButton.style.color = '';
                     successMessage.style.display = 'none';
-                }, 5000);
+
+                    // Show persistent submitted notice
+                    submittedNotice.style.display = 'block';
+                }, 3000);
             })
             .catch((error) => {
                 // Even with mode: 'no-cors', the submission likely succeeded
@@ -292,14 +305,22 @@
                 emailInput.value = '';
                 nameInput.value = '';
 
-                // Re-enable button
-                submitButton.disabled = false;
-                submitButton.textContent = 'join the waitlist';
+                // Change button to show submitted state
+                submitButton.textContent = 'submitted ✓';
+                submitButton.style.borderColor = '#4caf50';
+                submitButton.style.color = 'rgba(76, 175, 80, 0.8)';
 
-                // Auto-hide success message after 5 seconds
+                // Re-enable button after 3 seconds and reset appearance
                 setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'join the waitlist';
+                    submitButton.style.borderColor = '';
+                    submitButton.style.color = '';
                     successMessage.style.display = 'none';
-                }, 5000);
+
+                    // Show persistent submitted notice
+                    submittedNotice.style.display = 'block';
+                }, 3000);
             });
         });
     </script>
