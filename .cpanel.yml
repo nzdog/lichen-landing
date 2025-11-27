@@ -5,5 +5,6 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp privacy-policy.html $DEPLOYPATH
+    - /bin/cp terms-of-use.html $DEPLOYPATH
     - /bin/cp lichen-logo-text.png $DEPLOYPATH
     - /bin/cp logoNoText.png $DEPLOYPATH
