@@ -3,6 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/lichenpr/public_html/
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp intake.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp privacy-policy.html $DEPLOYPATH
     - /bin/cp terms-of-use.html $DEPLOYPATH
